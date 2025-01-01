@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Include external CSS for styling -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Include external JavaScript for interactivity -->
+    <script src="scripts.js"></script>
+    
+    <!-- Meta tags for encoding and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title -->
+    <title>Fan Control Dashboard</title>
+</head>
+<body>
+    <!-- Main title for the page -->
+    <h1>Fan Control Dashboard</h1>
+
+    <!-- Fan Front Controls -->
+    <div class="fan-container" id="fan-front">
+        <h2>Fan Front</h2>
+        <p>Speed: <span id="fan-front-speed">-- RPM</span></p>
+        <p>Power: <span id="fan-front-power">--%</span></p>
+        <!-- Slider to adjust fan power -->
+        <input type="range" min="0" max="100" value="0" 
+               class="fan-power-slider" data-fan-name="fan-front" id="fan-front-power-slider">
+        <span id="fan-front-power-display">0%</span>
+    </div>
+
+    <!-- Fan Back Controls -->
+    <div class="fan-container" id="fan-back">
+        <h2>Fan Back</h2>
+        <p>Speed: <span id="fan-back-speed">-- RPM</span></p>
+        <p>Power: <span id="fan-back-power">--%</span></p>
+        <!-- Slider to adjust fan power -->
+        <input type="range" min="0" max="100" value="0" 
+               class="fan-power-slider" data-fan-name="fan-back" id="fan-back-power-slider">
+        <span id="fan-back-power-display">0%</span>
+    </div>
+
+    <!-- General Settings Section -->
+    <div class="general-settings-container">
+        <h2>General Settings</h2>
+    
+        <!-- Group for Runtime of Fans -->
+        <div class="input-group">
+            <label for="runtime-of-fans">Runtime of Fans (Seconds):</label>
+            <input type="number" id="runtime-of-fans" value="0" min="0">
+        </div>
+    
+        <!-- Group for Interval -->
+        <div class="input-group">
+            <label for="interval">Interval (Seconds):</label>
+            <input type="number" id="interval" value="0" min="0">
+        </div>
+    
+        <!-- Update Button -->
+        <button onclick="setGeneralConfig()">Update General Settings</button>
+    </div>    
+</body>
+</html>
